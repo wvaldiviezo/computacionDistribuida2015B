@@ -2,8 +2,8 @@
 Escuela Politécnica Nacional
 Facultad de Ingeniería de Sistemas
 Computación Distribuida
-Integrantes:  Ricardo Ortiz
-		   Wilmer Valdiviezo
+Integrantes:  Ricardo Ortiz.
+		   Wilmer Valdiviezo.
 Paralelo: Gr2
 */
 
