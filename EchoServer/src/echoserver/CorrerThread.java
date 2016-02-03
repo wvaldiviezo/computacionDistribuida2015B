@@ -11,14 +11,14 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class ServerThread extends Thread{
+public class CorrerThread extends Thread{
 
     Socket clientSocket;
     PrintWriter out;
     BufferedReader in;
     String id;
     
-    public ServerThread(Socket socket, String thread) throws IOException {
+    public CorrerThread (Socket socket, String thread) throws IOException {
         this.clientSocket = socket;
         this.out = new PrintWriter(this.clientSocket.getOutputStream(), true);
         this.in = new BufferedReader(new InputStreamReader(this.clientSocket.getInputStream()));
