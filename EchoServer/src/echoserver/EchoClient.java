@@ -27,32 +27,26 @@
  * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
+ */ 
 package echoserver;
 import java.io.*;
 import java.net.*;
 
-public class EchoClient2 {
+public class EchoClient {
     public static void main(String[] args) throws IOException {
-   while(true){
-        boolean bandera=true;
-        String hostName ="172.31.197.22";
-        int portNumber = 9013;
-        Socket echoSocket;
-
-       /* if (args.length != 2) {
+        
+        if (args.length != 2) {
             System.err.println(
                 "Usage: java EchoClient <host name> <port number>");
             System.exit(1);
-        }*/
+        }
 
-        /*String hostName = args[0];
-        int portNumber = Integer.parseInt(args[1]);*/
-        echoSocket = new Socket(hostName, portNumber);
+        String hostName = args[0];
+        int portNumber = Integer.parseInt(args[1]);
 
         try (
-
-            PrintWriter out =
+            Socket echoSocket = new Socket(hostName, portNumber);
+             PrintWriter out =
                 new PrintWriter(echoSocket.getOutputStream(), true);
             BufferedReader in =
                 new BufferedReader(
@@ -65,19 +59,6 @@ public class EchoClient2 {
             while ((userInput = stdIn.readLine()) != null) {
                 out.println(userInput);
                 System.out.println("echo: " + in.readLine());
-                //echoSocket;
-                bandera=false;
-                System.out.println(bandera);
-                if(bandera){
-                    hostName ="172.31.197.22";
-                    portNumber = 9013;
-                    echoSocket = new Socket(hostName, portNumber);
-                  }else{
-                    hostName ="172.31.197.25";
-                    portNumber = 9015;
-                    echoSocket = new Socket(hostName, portNumber);
-                    bandera=true;
-                  }
             }
         } catch (UnknownHostException e) {
             System.err.println("Don't know about host " + hostName);
@@ -86,7 +67,6 @@ public class EchoClient2 {
             System.err.println("Couldn't get I/O for the connection to " +
                 hostName);
             System.exit(1);
-        }
-    }
+        } 
     }
 }
