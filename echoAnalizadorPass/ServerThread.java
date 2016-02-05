@@ -47,11 +47,8 @@ public class ServerThread extends Thread{
                 //Pattern pat = Pattern.compile("[a-zA-Z]{10,}[@_]");
                 //Pattern pat = Pattern.compile("[^A-Za-z0-9.@_-~#]+");
                 Matcher mat = pat.matcher(inputLine);
-                if((inputLine.indexOf("@")==-1)|(inputLine.indexOf("")==0)){
                 if (mat.matches()){
-                	
                 	System.out.println("valido");
-                	}
                 }else{
                 	System.out.println("no valido");
                 }

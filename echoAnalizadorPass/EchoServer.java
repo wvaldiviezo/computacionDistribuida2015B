@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package echoserver;
+package echoAnalizadorPass;
 
 import java.net.*;
 import java.io.*;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class EchoServer {
     public static void main(String[] args) throws IOException, InterruptedException {
        ArrayList<Thread> cs = new ArrayList<>(); 
-        int portNumber = 9014;
+        int portNumber = 9015;
         int i = 0;
 
         try (ServerSocket serverSocket = new ServerSocket(portNumber);) {
@@ -29,4 +29,4 @@ public class EchoServer {
         }
     }
     
-} 
+}
